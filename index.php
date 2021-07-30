@@ -27,59 +27,10 @@ if (isset($_SESSION["Sub_Admin_ID"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messages</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://bbdonlinetraining.com/en/assets/js/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Roboto", "system-ui", -apple-system, BlinkMacSystemFont,
-                "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
-                "Segoe UI Emoji", "Segoe UI Symbol";
-        }
-
-        table tr {
-            cursor: pointer;
-        }
-
-        table tr:hover {
-            color: red;
-        }
-
-        .body #msg_list {
-            width: 100%;
-            /* border: 1px solid red; */
-            display: flex;
-            flex-direction: column;
-        }
-
-        .user {
-            display: flex;
-        }
-
-        .body #msg_list a {
-            min-width: 80%;
-            justify-content: center;
-            align-self: center;
-            text-decoration: none;
-            border: 2px solid black;
-            padding: 0 20px;
-            border-radius: 8px;
-            margin-top: 10px;
-            width: auto;
-            color: black;
-        }
-
-        .body #msg_list a:hover {
-            color: white;
-            background: black;
-        }
-
-        .t_head {
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/css/messages.css">
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
