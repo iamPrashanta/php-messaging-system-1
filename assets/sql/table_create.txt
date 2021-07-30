@@ -1,0 +1,8 @@
+create table messages if not exists,
+with 6 column.
+1. id is primary key.
+2. msg_from.
+3. msg_to.
+4. msg_body.
+5. msg_read.
+6. date_time default will be current_timestamp.
