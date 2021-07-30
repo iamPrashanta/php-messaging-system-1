@@ -1,11 +1,11 @@
 <?php
 require_once '../../__required/db_connect.php';
-$Sub_Admin_ID = $_POST["Sub_Admin_ID"];
+$Login_ID = $_POST["Login_ID"];
 $cid = $_POST["cid"];
 $msg_text = "";
 
 $query = mysqli_query($msgconn, "SELECT *  FROM `messages` 
-WHERE (`msg_to` = $Sub_Admin_ID AND `msg_from`= $cid) OR (`msg_to` = $cid AND `msg_from`= $Sub_Admin_ID) ORDER BY `id` ASC LIMIT 100;");
+WHERE (`msg_to` = $Login_ID AND `msg_from`= $cid) OR (`msg_to` = $cid AND `msg_from`= $Login_ID) ORDER BY `id` ASC LIMIT 100;");
 
 if (mysqli_num_rows($query) > 0) {
     while ($rows = mysqli_fetch_assoc($query)) {
@@ -41,7 +41,7 @@ if (mysqli_num_rows($query) > 0) {
             }
         }
 
-        if ($msg_from == $Sub_Admin_ID) {
+        if ($msg_from == $Login_ID) {
             if ($msg_read == 0) {
                 $msg_text .= "<div class='chat outgoing'>
                     <div class='msg_text'>

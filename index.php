@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once '../__required/db_connect.php';
-if (isset($_SESSION["Sub_Admin_ID"])) {
-    $Sub_Admin_ID = $_SESSION["Sub_Admin_ID"];
+if (isset($_SESSION["Login_ID"])) {
+    $Login_ID = $_SESSION["Login_ID"];
     $date = date("Y-m-d");
     $hour_now = date("H");
     // auto logout after 30 min of inactivity
@@ -55,7 +55,7 @@ if (isset($_SESSION["Sub_Admin_ID"])) {
                     type: "POST",
                     url: "./conversations.php",
                     data: {
-                        Sub_Admin_ID: <?php echo $Sub_Admin_ID; ?>
+                        Login_ID: <?php echo $Login_ID; ?>
                     },
                     success: function(data) {
                         if (data) {

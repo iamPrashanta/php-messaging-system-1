@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once '../../__required/db_connect.php';
-if (isset($_SESSION["Sub_Admin_ID"])) {
-    $Sub_Admin_ID = $_SESSION["Sub_Admin_ID"];
+if (isset($_SESSION["Login_ID"])) {
+    $Login_ID = $_SESSION["Login_ID"];
     $date = date("Y-m-d");
     $hour_now = date("H");
 
@@ -71,7 +71,7 @@ if (isset($_SESSION["Sub_Admin_ID"])) {
                     type: "POST",
                     url: "./get_msg.php",
                     data: {
-                        Sub_Admin_ID: <?php echo $Sub_Admin_ID; ?>,
+                        Login_ID: <?php echo $Login_ID; ?>,
                         cid: <?php echo $cid; ?>
                     },
                     success: function(data) {
@@ -97,7 +97,7 @@ if (isset($_SESSION["Sub_Admin_ID"])) {
                     type: "POST",
                     url: "./send_msg.php",
                     data: {
-                        Sub_Admin_ID: <?php echo $Sub_Admin_ID; ?>,
+                        Login_ID: <?php echo $Login_ID; ?>,
                         cid: <?php echo $cid; ?>,
                         new_text: type
                     },
@@ -121,7 +121,7 @@ if (isset($_SESSION["Sub_Admin_ID"])) {
                         type: "POST",
                         url: "./get_msg.php",
                         data: {
-                            Sub_Admin_ID: <?php echo $Sub_Admin_ID; ?>,
+                            Login_ID: <?php echo $Login_ID; ?>,
                             cid: <?php echo $cid; ?>
                         },
                         success: function(data) {
